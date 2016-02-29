@@ -1,11 +1,11 @@
 'use strict';
 
 const DI = require('@scola/di');
-const Tester = require('./lib/tester.js');
+const Dispatcher = require('./lib/dispatcher.js');
 
 class Module extends DI.Module {
   configure() {
-    this.inject(Tester).with(
+    this.inject(Dispatcher).with(
       this.object({
         hairline: this.singleton(require('./lib/capabilities/hairline'))
       }),
@@ -16,5 +16,5 @@ class Module extends DI.Module {
 
 module.exports = {
   Module,
-  Tester
+  Dispatcher
 };
